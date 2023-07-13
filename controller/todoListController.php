@@ -1,16 +1,17 @@
 <?php
-require_once 'baseController.php';
-class todoController  extends BaseController
+
+class TodoListController
 {
     public function __construct() 
     {
-        parent::__construct();
         include('model/todoModel.php');
         $this->obj = new homeModel();
     }
     public function index()
     {
-        $this->loadView('view/partials/task.php');
+        include('view/layout/header.php');
+        include('view/main.php');
+        include('view/layout/footer.php');
     }
     public function fetch()
     {

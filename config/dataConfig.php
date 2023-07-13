@@ -1,5 +1,5 @@
 <?php
 return [
-    'path' => "http://localhost/ToDoList/index.php"
+    'path' => "http://localhost/ToDoList"
 ];
 ?>

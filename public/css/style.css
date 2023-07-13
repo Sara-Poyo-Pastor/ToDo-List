@@ -10,15 +10,9 @@ main{
     background: linear-gradient(155deg,#94dcde, #e761bd);
     padding: 10px;
 }
-.container{
-    width: 100%;
-    min-height:100vh;
-    background: linear-gradient(155deg,#94dcde, #e761bd);
-    padding: 10px;
-}
 .toDoApp{
     width: 100%;
-    max-width: 90%;
+    max-width: 70%;
     background: #fff;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
@@ -154,6 +148,7 @@ input:checked ~ .bubble::after {
 .todo-list .todo-item {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	background-color: #FFF;
 	padding: 1rem;
 	border-radius: 0.5rem;

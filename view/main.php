@@ -1,7 +1,6 @@
 <main class="app">
-    <div class="container">
     <div class="toDoApp">
-		<section class="create-todo">
+			<section class="create-todo">
 			<h2>ToDo LIST</h2>
 			<form id="new-todo-form">
 				<h4>¿Qué vas a añadir?</h4>
@@ -18,7 +17,7 @@
 				<input type="submit" id="btn-createTask" value="Añade a tu lista" />
 			</form>
 			<section class="todo-list">
-				<h4>COSAS POR HACER</h4>
+				<h4>TAREAS POR HACER</h4>
 				<div class="list" id="total-todos"></div>
 			</section>
 			
@@ -27,7 +26,8 @@
 				<table class="table table-hover">
 				<thead>
 					<tr>
-						<th scope="col-sm d-flex justify-content-between align-items-center">Tarea</th>
+						<th scope="col-sm">Completada</th>
+						<th scope="col-sm">Tarea</th>
 						<th scope="col-sm">Acciones</th>
 					</tr>
 				</thead>
@@ -40,7 +40,7 @@
 			</div>
 			</section>
 </div>
-</div>
+
 </main>
 
 

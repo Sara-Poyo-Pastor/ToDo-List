@@ -3,11 +3,8 @@ $config = require_once('config/dataConfig.php');
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
-    const todoBtn = $('#add-todo'); //todo button Selector
-    const updateTodoModal = $("#modal") // update todo modal selector
-    const modalTodoInput = $("#modalInput"); // modal todo input selector
-    const todoUpdateBtn = $("#updateBtn"); // modal todo update button selector
-
+    const updateTodoModal = $("#modal");
+    const todoUpdateBtn = $("#updateBtn"); 
     const newTodoForm = $("#new-todo-form");
     const tituloModal = $("#modalInputTarea");
     const descripcionModal = $("#modalInputDescripcion");
@@ -33,7 +30,7 @@ $(document).ready(function() {
     const fetchTodos = () => {
         $.ajax({
             type: 'GET',
-            url: '<?php echo $config["path"]?>/index.php?controller=todo&function=fetch',
+            url: '<?php echo $config["path"]?>/index.php?function=fetch',
             success: function(res) {
                 const parseRes = JSON.parse(res);
                 const {
@@ -48,9 +45,8 @@ $(document).ready(function() {
 
                         $('#total-todos').html('Cantidad Tareas: ' + total);
                         $.map(todos, function(todo, key) {
-                            // todosHtml += '<li class="list-group-item d-flex justify-content-between align-items-center">' + todo.titulo + '<span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></li>'
-                            // todosHtml += '<tr><td>' + todo.titulo + '</td><td><span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></td><td><input class="end-todo" type="checkbox"  data-todo-id="' + todo.id_tarea + ' " id="taskEnd"/></td></tr>';
-                            todosHtml += '<tr><td>' + todo.titulo + '</td><td><span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></td></tr>';
+                            todosHtml += '<tr><td>' + todo.titulo + '</td><td><span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></td><td><input class="end-todo" type="checkbox"  data-todo-id="' + todo.id_tarea + ' " id="taskEnd"/></td></tr>';
+                            // todosHtml += '<tr><td>' + todo.titulo + '</td><td><span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></td></tr>';
 
                         });
                         $('#todos-list').html(todosHtml);
@@ -75,7 +71,7 @@ $(document).ready(function() {
         if ($.trim(titulo).length > 0 ) {
             $.ajax({
                 type: 'POST',
-                url: '<?php echo $config["path"]?>/index.php?controller=todo&function=create',
+                url: '<?php echo $config["path"]?>/index.php?function=create',
                 data: {
                     titulo,
                     descripcion
@@ -104,7 +100,7 @@ $(document).ready(function() {
         if (confirm("¿Estás seguro que deseas eliminar la tarea?") == true) {
             $.ajax({
                 type: 'POST',
-                url: `<?php echo $config["path"]?>/index.php?controller=todo&function=delete&id=${todoId}`,
+                url: `<?php echo $config["path"]?>/index.php?function=delete&id=${todoId}`,
                 data: {
                     todoId
                 },
@@ -143,11 +139,9 @@ $(document).ready(function() {
         const todoId = $(this).data('todo-id');
         const objData = datos.find((a)=> a.id_tarea == todoId);
         console.log(objData);
-
         if (confirm("¿Desea finalizar la tarea?") == true) {
-
+            console.log("Tarea finalizada");
         }
-
     })
 
     todoUpdateBtn.click(function() {
@@ -157,7 +151,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: '<?php echo $config["path"]?>/index.php?controller=todo&function=update',
+            url: '<?php echo $config["path"]?>/index.php?function=update',
             data: {
                 todoId: selectedId,
                 titulo,

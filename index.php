@@ -1,27 +1,29 @@
 <?php
-$controller = "todo";
-$function = "index";
 require_once  'config/dbConfig.php';
-if (isset($_GET['controller']) && !empty($_GET['controller'])) 
-{
-    $controller = $_GET['controller'];
-}
+include('controller/todoListController.php');
+
+/**
+ *  Declaro la variable que mostrara la pagina principal
+ */
+$function = "index";
+
+/**
+ * Recibo como parametro las diferentes llamadas a los metodos del Backend
+ */
 if (isset($_GET['function']) && !empty($_GET['function'])) 
 {
     $function = $_GET['function'];
 }
-if (file_exists('controller/'.$controller.'.php')) 
+
+/**
+ *  Instanciando el objeto que accederá a los datos
+ */
+$obj = new TodoListController();
+
+if (method_exists('TodoListController', $function)) 
 {
-    include('controller/'.$controller.'.php');
-    $class = $controller.'Controller';
-    $obj = new $class();
-    if (method_exists($class, $function)) 
-    {
-        $obj->$function();
-    } else {
-        echo 'Function not found';
-    }
+    $obj->$function();
 } else {
-    echo 'Controller not found';
+    echo 'Function not found';
 }
 ?>
