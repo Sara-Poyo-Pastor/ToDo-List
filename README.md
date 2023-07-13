@@ -3,7 +3,7 @@ todo list in MVC using jquery &amp; oop php
 
 1. Se debe configurar la ruta del proyecto en local en el fichero "config/dataConfig.php"
 
-'path' => "http://localhost/repo_todo/todo_list_mvc"
+'path' => "http://localhost/ToDoList"
 
 2. Se debe configurar los datos de la conexión a MYSQL en el fichero "config/dbConfig.php"
 
