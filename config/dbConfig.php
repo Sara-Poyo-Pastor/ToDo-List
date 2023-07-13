@@ -3,7 +3,7 @@ class dbConnect
 {
     private $server = 'localhost';
     private $username = 'root';
-    private $password = 'Hack123?123';
+    private $password = '';
     private $dbName = 'todo_list';
     public $db_conn;
 

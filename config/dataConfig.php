@@ -1,5 +1,5 @@
 <?php
 return [
-    'path' => "http://localhost/repo_todo/todo_list_mvc"
+    'path' => "http://localhost/ToDoList/index.php"
 ];
 ?>
