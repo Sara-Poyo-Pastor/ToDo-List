@@ -22,7 +22,7 @@ Among the functional requirements of the application are task creation, where us
   -The MYSQL connection data must be configured in the file "config/dbConfig.php".
       - private $server = 'localhost';
       - private $username = 'root';
-      - private $password = 'Hack123?123';
+      - private $password = '';
       - private $dbName = 'todo_list';
   - You must create a database in MYSQL with the name "todo_list".
   - Import in MYSQl the dump file named "tarea.sql".
