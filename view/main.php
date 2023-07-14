@@ -26,7 +26,7 @@
 				<table class="table table-hover">
 				<thead>
 					<tr>
-						<th scope="col-sm">Completada</th>
+						<!-- <th scope="col-sm">Completada</th> -->
 						<th scope="col-sm">Tarea</th>
 						<th scope="col-sm">Acciones</th>
 					</tr>

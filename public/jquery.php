@@ -45,8 +45,8 @@ $(document).ready(function() {
 
                         $('#total-todos').html('Cantidad Tareas: ' + total);
                         $.map(todos, function(todo, key) {
-                            todosHtml += '<tr><td>' + todo.titulo + '</td><td><span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></td><td><input class="end-todo" type="checkbox"  data-todo-id="' + todo.id_tarea + ' " id="taskEnd"/></td></tr>';
-                            // todosHtml += '<tr><td>' + todo.titulo + '</td><td><span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></td></tr>';
+                            // todosHtml += '<tr><td>' + todo.titulo + '</td><td><span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></td><td><input class="end-todo" type="checkbox"  data-todo-id="' + todo.id_tarea + ' " id="taskEnd"/></td></tr>';
+                            todosHtml += '<tr><td>' + todo.titulo + '</td><td><span><a class="edit-todo text-success mr-2" data-todo-id="' + todo.id_tarea + '" href="javascript:void(0)"> <i class="fa fa-edit"></i> </a> <a  class="del-todo text-danger" data-todo-id="' + todo.id_tarea + ' " href="javascript:void(0)"> <i class="fas fa-trash-alt"></i> </a><span></td></tr>';
 
                         });
                         $('#todos-list').html(todosHtml);
